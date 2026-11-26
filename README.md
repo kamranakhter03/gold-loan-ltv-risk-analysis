@@ -5,8 +5,7 @@
 Gold prices have fallen sharply. Find which active gold loans now breach the regulatory LTV cap, how much money is at risk, and where.
 
 > A live industry project on [JobPrax](https://www.jobprax.com). The client, Suvarna Finance Ltd, and its data are simulated.
-
-> **Status: in progress.** 50 of 50 tasks solved as of 26 Nov 2026. The final report will be added when the project is complete.
+> Certificate: [https://www.jobprax.com/certificates/DD-AVAE-C2BX](https://www.jobprax.com/certificates/DD-AVAE-C2BX)
 
 ## Business problem
 
@@ -20,29 +19,34 @@ Management does not know how many active gold loans currently breach the 75% LTV
 - Identify the schemes, disbursal periods, states and branches that contribute most to breaches.
 - Recommend a prioritised margin-call plan and any change needed to lending policy.
 
-## Work so far
+## Executive summary
 
-- ✅ [Task 5: Disbursal period](sql/task-05-disbursal-period.sql)
-- ✅ [Task 7: Duplicate rows](sql/task-07-duplicate-rows.sql)
-- ✅ [Task 8: Inconsistent status values](sql/task-08-inconsistent-status-values.sql)
-- ✅ [Task 10: Purity formats](sql/task-10-purity-formats.sql)
-- ✅ [Task 15: Loans that cannot be assessed](sql/task-15-loans-that-cannot-be-assessed.sql)
-- ✅ [Task 16: Gold rate history](sql/task-16-gold-rate-history.sql)
-- ✅ [Task 17: 2026 peak gold rate](sql/task-17-2026-peak-gold-rate.sql)
-- ✅ [Task 18: Date of the peak](sql/task-18-date-of-the-peak.sql)
-- ✅ [Task 19: Rate on the assessment date](sql/task-19-rate-on-the-assessment-date.sql)
-- ✅ [Task 20: Fall from the peak](sql/task-20-fall-from-the-peak.sql)
-- ✅ [Task 21: City names in the branch master](sql/task-21-city-names-in-the-branch-master.sql)
-- ✅ [Task 22: Loans by scheme](sql/task-22-loans-by-scheme.sql)
-- ✅ [Task 23: Total disbursed](sql/task-23-total-disbursed.sql)
-- ✅ [Task 30: Interest collected](sql/task-30-interest-collected.sql)
-- ✅ [Task 41: Book by region](sql/task-41-book-by-region.sql)
+As of 15 October 2026, Suvarna Finance has 18,775 assessable active gold loans, of which 2,502 (13.33%) exceed the RBI's 75% LTV limit. These loans represent ₹64.81 crore in outstanding principal, including 564 critical loans above 80% LTV with ₹15.11 crore outstanding. Gold prices have fallen 10.22% from their 2026 peak, increasing portfolio risk. The Express scheme is the primary risk driver, with a 97.1% breach rate. Immediate priority should be to address critical accounts, initiate targeted recovery actions and tighten high-LTV lending controls.
+
+## Key findings
+
+The analysis identified 2,502 loans above the 75% LTV threshold, representing 13.33% of assessable active loans. The Express scheme is the largest risk contributor, with 1,548 breached loans out of 1,595 active loans (97.1%). Tamil Nadu and Telangana account for the highest breached outstanding exposure at ₹31.29 crore and ₹14.49 crore, respectively. September 2026 recorded the highest monthly breach count at 814 loans. The top 10 branches also show concentrated exposure, led by Hyderabad Bazaar with ₹4.47 crore. A further 5% decline in gold prices could increase the number of breached loans to 4,580. The four charts highlight scheme-wise, monthly, state-wise and branch-wise risk concentration.
+
+## Recommendations
+
+Prioritize the 564 critical loans above 80% LTV for immediate customer outreach and recovery action. Target the remaining breached accounts with a repayment requirement of approximately ₹2.59 crore to bring all breached loans down to 75% LTV. Review and tighten Express scheme lending limits, and prioritize monitoring in Tamil Nadu, Telangana and high-exposure branches. Introduce regular LTV monitoring against gold price movements to identify emerging breaches early.
+
+## Charts
+
+![Chart 1](report/chart-1.png)
+
+![Chart 2](report/chart-2.png)
+
+![Chart 3](report/chart-3.png)
+
+![Chart 4](report/chart-4.png)
 
 ## What I did
 
 - Solved 50 of 50 analysis tasks tied to the business requirements
-- Wrote 15 SQL queries, one per task, in [`sql/`](sql)
+- Wrote 16 SQL queries, one per task, in [`sql/`](sql)
 - Explored and charted the data in Python, in [`notebook/analysis.ipynb`](notebook/analysis.ipynb)
+- Wrote a final report with findings and recommendations, in [`report/report.md`](report/report.md)
 
 ## Skills
 
@@ -63,5 +67,6 @@ Column details and a sample of each table are in [`data/`](data).
 ```
 sql/          one SQL file per task
 notebook/     Python analysis
+report/       final report and charts
 data/         table samples and column descriptions
 ```
